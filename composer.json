@@ -1,0 +1,22 @@
+{
+  "name": "black-ice-wizard/phone-book-workpiece",
+  "description": "Workpiece for phone book",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Vladimir Cheskidov",
+      "email": "black.ice.wizard@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "PhoneBook\\": [
+        "src/PhoneBook"
+      ]
+    }
+  }
+}
