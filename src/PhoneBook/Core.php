@@ -10,20 +10,20 @@ class Core
 
     public function __construct(IStorage $storage)
     {
-        $this->contacts = $storage->readContacts();
+        $this->storage = $storage;
     }
 
     public function proceedFormData()
     {
         $contacts = [];
-        $i = 0;
-        while (isset($_REQUEST["contact_name_" . $i]) || isset($_REQUEST["contact_phone_" . $i])) {
-            $name = $_REQUEST["contact_name_" . $i];
-            $phone = $_REQUEST["contact_phone_" . $i];
-            if (!empty($name) || !empty($phone)) {
-                $contacts[] = $this->storage->getNewContactInstance($name, $phone);
+        if (!isset($_REQUEST["contact"])) {
+            return;
+        }
+
+        foreach ($_REQUEST["contact"] as $key => $contact_array) {
+            if (!empty($contact_array['name']) || !empty($contact_array['phone'])) {
+                $contacts[] = $this->storage->getNewContactInstance($contact_array['name'], $contact_array['phone']);
             }
-            $i++;
         }
         $this->storage->storeContacts($contacts);
     }
