@@ -2,6 +2,7 @@
   "name": "black-ice-wizard/phone-book-workpiece",
   "description": "Workpiece for phone book",
   "type": "library",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Vladimir Cheskidov",
