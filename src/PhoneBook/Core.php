@@ -30,6 +30,11 @@ class Core
 
     public function display(IView $view)
     {
-        $view->display($this->storage->readContacts());
+        $view->display(
+            array_merge(
+                $this->storage->readContacts(),
+                [$this->storage->getEmptyContactInstance()]
+            )
+        );
     }
 }
