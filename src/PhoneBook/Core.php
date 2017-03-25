@@ -21,8 +21,8 @@ class Core
         }
 
         foreach ($_REQUEST["contact"] as $key => $contact_array) {
-            if (!empty($contact_array['name']) || !empty($contact_array['phone'])) {
-                $contacts[] = $this->storage->getNewContactInstance($contact_array['name'], $contact_array['phone']);
+            if (!empty($contact_array)) {
+                $contacts[] = $this->storage->getNewContactInstance($contact_array);
             }
         }
         $this->storage->storeContacts($contacts);
