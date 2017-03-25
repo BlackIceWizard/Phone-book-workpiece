@@ -5,6 +5,8 @@ interface IStorage
 {
     public function getNewContactInstance(array $data) : IContact;
 
+    public function getEmptyContactInstance() : IContact;
+
     /**
      * @return IContact[]
      */
