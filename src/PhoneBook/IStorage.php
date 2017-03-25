@@ -3,7 +3,7 @@ namespace PhoneBook;
 
 interface IStorage
 {
-    public function getNewContactInstance(string $name, string $phone) : IContact;
+    public function getNewContactInstance(array $data) : IContact;
 
     /**
      * @return IContact[]
